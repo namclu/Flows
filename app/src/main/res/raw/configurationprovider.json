@@ -1,0 +1,7 @@
+{
+  "auth":[{"type":"basic.default","config":{},"requireOtp":false}],
+  "host":"hcpms-p2001156692trial.hanatrial.ondemand.com",
+  "port":443,
+  "protocol":"https",
+  "appID":"com.sap.flows"
+}

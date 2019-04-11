@@ -20,14 +20,34 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // Logging dependency
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+    implementation 'com.github.tony19:logback-android:1.3.0-3'
+
+    // SAP Cloud Android SDK dependencies
+    implementation group: 'com.sap.cloud.android', name: 'foundation', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboarding', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'google-vision', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'flows', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-basicauth', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-storemanager', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-welcomescreen', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'onboardingflows-eulascreen', version :sdkVersion
+    implementation group: 'com.sap.cloud.android', name: 'qrcodereader', version :sdkVersion
+
 }
